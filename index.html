@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Machete | Logiciel de rentabilité Amazon FBA et FBM</title>
+  <meta name="description" content="Calculez votre rentabilité Amazon, simulez vos prix et préparez vos rapports de marge, de pré-comptabilité et de TVA avec Machete.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:title" content="Machete | Rentabilité Amazon FBA et FBM">
+  <meta property="og:description" content="Analysez vos coûts, estimez votre bénéfice net et simulez vos prix avec Machete.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lmm-solutions.com/">
+  <meta property="og:site_name" content="Machete par LMM Solutions">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://lmm-solutions.com/assets/partage.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Machete — Analysez votre rentabilité Amazon">
+  <meta name="twitter:image" content="https://lmm-solutions.com/assets/partage.png">
+  <meta name="twitter:title" content="Machete | Rentabilité Amazon FBA et FBM">
+  <meta name="twitter:description" content="Analysez vos coûts, estimez votre bénéfice net et simulez vos prix avec Machete.">
+  <meta name="theme-color" content="#081d2c">
+  <link rel="canonical" href="https://lmm-solutions.com/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23081d2c'/%3E%3Cpath d='M14 44V20h8l10 13 10-13h8v24h-9V33l-9 11-9-11v11z' fill='%232dd4bf'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --navy:#081d2c; --navy-2:#0d2b3d; --ink:#102938; --muted:#5c6f7a;
+      --teal:#15803d; --teal-2:#22c55e; --mint:#f0fdf4; --cyan:#eefbf2;
+      --paper:#fff; --soft:#f5f8fa; --line:#dbe5e9; --amber:#f2a93b;
+      --shadow:0 24px 60px rgba(8,29,44,.11); --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{margin:0;color:var(--ink);background:var(--paper);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+    button,a{font:inherit} a{color:inherit} button{cursor:pointer}
+    :focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+    .container{width:min(1160px,calc(100% - 40px));margin:auto}
+    .skip{position:fixed;top:8px;left:8px;z-index:100;transform:translateY(-150%);background:white;padding:10px 14px;border-radius:8px}.skip:focus{transform:none}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(219,229,233,.9)}
+    .nav{min-height:74px;display:flex;align-items:center;gap:24px}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900;font-size:1.3rem;letter-spacing:-.03em}
+    .brand-mark{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:var(--navy);color:var(--teal-2);font-weight:950}
+    .nav-links{display:flex;align-items:center;gap:24px;margin-left:auto}.nav-links a{text-decoration:none;color:#314a58;font-size:.92rem;font-weight:700}.nav-links a:hover{color:var(--teal)}
+    .menu-button{display:none;margin-left:auto;border:1px solid var(--line);background:white;border-radius:10px;padding:8px 11px;font-weight:800}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:11px 20px;border:1px solid var(--navy);border-radius:12px;background:var(--navy);color:white;text-decoration:none;font-weight:850;transition:.2s transform,.2s background,.2s box-shadow}
+    .button:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(8,29,44,.18)}
+    .button.secondary{background:white;color:var(--navy);border-color:var(--line)}.button.teal{background:var(--teal);border-color:var(--teal)}.button.small{min-height:40px;padding:8px 14px;border-radius:10px;font-size:.9rem}
+    .hero{position:relative;overflow:hidden;padding:82px 0 76px;background:radial-gradient(circle at 78% 8%,rgba(45,212,191,.16),transparent 26%),linear-gradient(180deg,#f8fbfc 0%,#fff 100%)}
+    .hero-grid{display:grid;grid-template-columns:1fr 1.02fr;gap:62px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:#087c72;font-size:.78rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase}.eyebrow:before{content:"";width:24px;height:2px;background:var(--teal)}
+    h1,h2,h3{line-height:1.12;letter-spacing:-.04em;color:var(--navy)}h1{font-size:clamp(2.7rem,5.6vw,4.8rem);margin:16px 0 22px}h2{font-size:clamp(2rem,4vw,3.2rem);margin:12px 0 16px}h3{font-size:1.35rem;margin:0 0 10px;letter-spacing:-.02em}
+    .hero h1 span{color:var(--teal)}.lead{font-size:1.18rem;color:#425c69;max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 20px}.microcopy{font-size:.86rem;color:var(--muted);margin:0}
+    .product-shot{position:relative;background:var(--navy);border-radius:28px;padding:16px;box-shadow:0 34px 80px rgba(8,29,44,.24)}.product-shot>img{display:block;width:100%;height:auto;object-fit:contain;object-position:top left;border-radius:17px;background:var(--soft)}
+    .app-window{overflow:hidden;border-radius:17px;background:#f8fafb}.window-bar{height:37px;display:flex;align-items:center;gap:6px;padding:0 14px;background:white;border-bottom:1px solid var(--line)}.dot{width:8px;height:8px;border-radius:50%;background:#cbd7dc}.window-title{margin-left:8px;color:#78909b;font-size:.68rem;font-weight:800}
+    .app-body{display:grid;grid-template-columns:112px 1fr;min-height:400px}.side{background:#102e40;padding:18px 11px}.side b{color:white;font-size:.8rem}.side span{display:block;height:9px;margin-top:18px;border-radius:6px;background:#385565}.side span:nth-child(3){width:70%}.side span:nth-child(4){width:82%}.dash{padding:22px}.dash-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.dash-head strong{font-size:1rem}.live-pill{padding:5px 9px;border-radius:99px;background:var(--mint);color:#087c72;font-size:.65rem;font-weight:900}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.kpi{background:white;border:1px solid var(--line);border-radius:11px;padding:12px}.kpi small{display:block;color:#71858e;font-size:.62rem}.kpi b{display:block;margin-top:4px;font-size:1rem}.kpi.good b{color:#087c72}
+    .chart{height:128px;margin-top:14px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(to top,transparent 24%,#e8eef1 25%,transparent 26%,transparent 49%,#e8eef1 50%,transparent 51%,transparent 74%,#e8eef1 75%,transparent 76%),linear-gradient(135deg,transparent 0 13%,rgba(15,159,145,.12) 13% 16%,transparent 16% 25%,rgba(15,159,145,.18) 25% 29%,transparent 29% 42%,rgba(15,159,145,.24) 42% 47%,transparent 47% 58%,rgba(15,159,145,.3) 58% 63%,transparent 63% 72%,rgba(15,159,145,.38) 72% 78%,transparent 78% 100%);position:relative}.chart:after{content:"Aperçu illustratif — données de démonstration";position:absolute;left:10px;bottom:7px;font-size:.58rem;color:#7f939c}
+    .table-lines{display:grid;gap:8px;margin-top:14px}.table-line{height:25px;border-radius:7px;background:linear-gradient(90deg,#e5edf0 0 28%,transparent 28% 36%,#d8e5e9 36% 54%,transparent 54% 60%,#bfeee6 60% 78%,transparent 78%)}
+    .trust-row{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:18px;margin-top:28px;background:white}.trust-row div{padding:16px 18px;border-right:1px solid var(--line)}.trust-row div:last-child{border:0}.trust-row b{display:block;color:var(--navy);font-size:.92rem}.trust-row span{font-size:.76rem;color:var(--muted)}
+    section{padding:88px 0}.section-head{max-width:760px;margin:0 auto 42px;text-align:center}.section-head p{color:var(--muted);font-size:1.05rem}.soft{background:var(--soft)}.dark{background:var(--navy);color:white}.dark h2,.dark h3{color:white}.dark .eyebrow{color:var(--teal-2)}
+    .problem-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}.problem-copy p{font-size:1.08rem;color:var(--muted)}.cost-cloud{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.cost{padding:18px;background:white;border:1px solid var(--line);border-radius:16px}.cost b{display:block;color:var(--navy)}.cost span{font-size:.88rem;color:var(--muted)}.cost.alert{grid-column:1/-1;background:#fff8eb;border-color:#f3d39b}.cost.alert b{color:#9b5b00}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{display:flex;flex-direction:column;padding:28px;background:white;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 10px 32px rgba(8,29,44,.05)}.feature-number{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:var(--mint);color:#087c72;font-weight:950;margin-bottom:22px}.feature p{color:var(--muted)}.feature ul{margin:4px 0 22px;padding-left:19px}.feature li{margin:7px 0}.feature a{margin-top:auto;color:#087c72;font-weight:850;text-decoration:none}.feature a:hover{text-decoration:underline}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;counter-reset:step}.step{position:relative;padding:26px 26px 24px 78px;border-top:1px solid #355061}.step:before{counter-increment:step;content:counter(step);position:absolute;left:18px;top:24px;width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:var(--teal);font-weight:950}.step p{color:#b9c9d1;margin:0}
+    .demo-grid{display:grid;grid-template-columns:300px 1fr;gap:30px;align-items:stretch}.demo-tabs{display:grid;gap:10px;align-content:start}.demo-tab{width:100%;text-align:left;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:white;color:var(--ink);font-weight:850}.demo-tab span{display:block;margin-top:3px;color:var(--muted);font-size:.82rem;font-weight:500}.demo-tab[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:white}.demo-tab[aria-selected="true"] span{color:#bfd1da}
+    .demo-panel{min-height:390px;padding:26px;border-radius:22px;background:white;border:1px solid var(--line);box-shadow:var(--shadow)}.demo-panel[hidden]{display:none}.demo-top{display:flex;justify-content:space-between;gap:20px;align-items:start}.demo-status{white-space:nowrap;padding:6px 10px;border-radius:99px;background:var(--mint);color:#087c72;font-size:.72rem;font-weight:900}.demo-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}.demo-card{padding:16px;border-radius:14px;background:var(--soft)}.demo-card small{display:block;color:var(--muted)}.demo-card strong{font-size:1.3rem}.demo-note{border-left:4px solid var(--teal);background:var(--mint);padding:15px 17px;border-radius:0 12px 12px 0}.demo-placeholder{display:grid;place-items:center;min-height:130px;border:2px dashed #bed0d7;border-radius:16px;text-align:center;color:var(--muted);padding:20px}.demo-placeholder b{display:block;color:var(--navy)}
+    .video-action{display:flex;justify-content:center;margin-top:28px}.video-action .button:before{content:"▶";font-size:.8rem}.screenshots{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:52px}.screen{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:white;box-shadow:0 12px 30px rgba(8,29,44,.07)}.screen img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;background:var(--soft)}.screen figcaption{padding:14px 16px;color:var(--muted);font-size:.86rem}.screen figcaption b{display:block;color:var(--navy);font-size:.96rem}
+    .media-modal{display:none;position:fixed;inset:0;z-index:100;background:rgba(3,13,20,.94);padding:24px;align-items:center;justify-content:center}.media-modal.open{display:flex}.media-dialog{position:relative;width:min(1000px,100%)}.media-dialog video{display:block;width:100%;max-height:80vh;border-radius:15px;background:#000}.modal-close{position:absolute;right:0;top:-48px;width:40px;height:40px;border:1px solid #ffffff55;border-radius:50%;background:#ffffff14;color:white;font-size:1.1rem}
+    .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.benefit{padding:22px;border:1px solid var(--line);border-radius:16px}.benefit b{display:block;margin-bottom:6px;color:var(--navy)}.benefit p{margin:0;color:var(--muted);font-size:.92rem}
+    .pricing-note{text-align:center;color:var(--muted);font-size:.87rem;margin-top:-24px;margin-bottom:28px}.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}.price{position:relative;display:flex;flex-direction:column;padding:28px;border:1px solid var(--line);border-radius:22px;background:white}.price.featured{border:2px solid var(--teal);box-shadow:var(--shadow)}.popular{position:absolute;top:-14px;right:18px;padding:6px 10px;border-radius:99px;background:var(--teal);color:white;font-size:.7rem;font-weight:900}.amount{margin:8px 0 18px;color:var(--navy);font-size:2.35rem;font-weight:950;letter-spacing:-.05em}.amount small{font-size:.8rem;color:var(--muted);letter-spacing:0}.price p{color:var(--muted)}.price ul{padding-left:19px;margin:8px 0 24px}.price li{margin:8px 0}.price .button{margin-top:auto}.price-disclaimer{margin-top:22px;text-align:center;color:var(--muted);font-size:.79rem}
+    .confidence{display:grid;grid-template-columns:1fr 1fr;gap:18px}.confidence article{padding:24px;border:1px solid #2b485a;border-radius:18px;background:#0d2b3d}.confidence p{margin:0;color:#b9c9d1}.confidence strong{display:block;margin-bottom:7px;color:white}
+    .faq{max-width:900px;margin:auto}.faq details{border-bottom:1px solid var(--line)}.faq summary{cursor:pointer;list-style:none;padding:21px 44px 21px 0;color:var(--navy);font-weight:850;position:relative}.faq summary::-webkit-details-marker{display:none}.faq summary:after{content:"+";position:absolute;right:8px;top:18px;font-size:1.5rem;color:var(--teal)}.faq details[open] summary:after{content:"−"}.faq details p{margin:-6px 0 22px;color:var(--muted);max-width:800px}
+    .diagnostic{background:var(--mint)}.diagnostic-box{max-width:780px;margin:auto;padding:38px;border:1px solid #bbf7d0;border-radius:var(--radius);background:white;text-align:center}.diagnostic-form{display:flex;gap:10px;max-width:560px;margin:24px auto 10px}.diagnostic-form input{min-width:0;flex:1;padding:13px 15px;border:1px solid var(--line);border-radius:12px;font:inherit}.form-success{display:none;margin-top:18px;padding:12px 14px;border-radius:10px;background:var(--mint);color:#15803d;font-weight:750}.form-privacy{font-size:.76rem;color:var(--muted)}
+    .final{padding:76px 0;background:linear-gradient(120deg,var(--teal),#15803d);color:white;text-align:center}.final h2{color:white;margin-top:0}.final p{font-size:1.08rem;opacity:.92}.final .button{background:white;color:var(--navy);border-color:white;margin-top:14px}
+    footer{padding:52px 0 30px;background:#06151f;color:#c4d1d7}.footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:36px}.footer-title{color:white;font-weight:900;font-size:1.2rem}.footer-links{display:grid;align-content:start;gap:7px}.footer-links b{color:white;margin-bottom:5px}.footer-links a{color:#c4d1d7;text-decoration:none}.footer-links a:hover{color:white}.footer-bottom{margin-top:38px;padding-top:20px;border-top:1px solid #203542;font-size:.78rem;color:#8298a3}
+    .link-button{border:0;background:none;color:#c4d1d7;text-align:left;padding:0;cursor:pointer}.link-button:hover{color:white}.cookie-panel{display:none;position:fixed;z-index:120;left:18px;right:18px;bottom:18px;max-width:740px;margin:auto;padding:20px;border:1px solid var(--line);border-radius:16px;background:white;box-shadow:0 22px 70px rgba(8,29,44,.28)}.cookie-panel.open{display:block}.cookie-panel p{margin:0 0 14px;color:var(--muted);font-size:.88rem}.cookie-panel strong{display:block;margin-bottom:5px;color:var(--navy)}.cookie-actions{display:flex;gap:9px;flex-wrap:wrap}.cookie-actions .button{min-height:40px;padding:8px 14px;font-size:.86rem}
+    @media(max-width:920px){.nav-links{display:none;position:absolute;top:74px;left:0;right:0;padding:18px 20px;background:white;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}.nav-links.open{display:grid}.nav-links .button{width:100%}.menu-button{display:block}.hero-grid,.problem-grid,.demo-grid{grid-template-columns:1fr}.hero{padding-top:56px}.product-shot{max-width:650px}.features,.prices,.benefits{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr}.trust-row{grid-template-columns:1fr}.trust-row div{border-right:0;border-bottom:1px solid var(--line)}.confidence{grid-template-columns:1fr}}
+    @media(max-width:640px){.container{width:min(100% - 28px,1160px)}section{padding:66px 0}h1{font-size:2.65rem}.lead{font-size:1.05rem}.actions .button{width:100%}.features,.prices,.benefits,.cost-cloud,.demo-cards,.footer-grid,.screenshots{grid-template-columns:1fr}.cost.alert{grid-column:auto}.app-body{grid-template-columns:70px 1fr;min-height:325px}.dash{padding:13px}.kpis{grid-template-columns:1fr}.kpi:nth-child(2),.kpi:nth-child(3){display:none}.chart{height:108px}.side{padding:13px 8px}.product-shot{padding:9px;border-radius:20px}.product-shot>img{height:auto}.demo-top{display:block}.demo-status{display:inline-block;margin-top:6px}.footer-grid{gap:26px}.diagnostic-box{padding:28px 18px}.diagnostic-form{display:grid}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
+  
+    [hidden]{display:none!important}.capture-button{display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:12px;background:white;cursor:zoom-in;overflow:hidden}.capture-button img{display:block;width:100%;height:auto;max-height:460px;object-fit:contain;object-position:top}.capture-dialog{width:min(96vw,1700px);max-height:94vh;padding:18px;border:0;border-radius:16px}.capture-dialog::backdrop{background:#081d2ce8}.capture-dialog img{display:block;width:100%;height:auto}.capture-dialog form{position:sticky;top:0;display:flex;justify-content:flex-end}.capture-dialog button{padding:10px 18px;background:var(--navy);color:white;border:0;border-radius:10px}.hero-grid>*{min-width:0}
+.video-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:36px}.video-card{padding:20px;border:1px solid var(--line);border-radius:18px;background:white}.video-card video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#081d2c;border-radius:10px}.video-card p{font-size:.875rem}.video-error{color:#a42525}@media(max-width:640px){.video-gallery{grid-template-columns:1fr}}.video-gallery{grid-template-columns:1fr}.video-tabs{display:flex;gap:12px;margin:24px 0 16px}.video-tabs .demo-tab{flex:1}.video-summary{margin-top:16px}.video-summary summary{cursor:pointer;font-weight:700}@media(max-width:640px){.video-tabs{flex-direction:column}}
+    .hero-capabilities{font-size:.86rem;line-height:1.8;font-weight:700;color:#365665;margin:0 0 10px}
+    .calculation-note{margin-top:28px;padding:26px;border:1px solid var(--line);border-radius:18px;background:white}.calculation-note p{color:#425c69}.calculation-note summary{cursor:pointer;font-weight:750}
+    .reports-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.report-card{min-width:0;padding:28px;border:1px solid var(--line);border-radius:22px;background:white;display:flex;flex-direction:column;box-shadow:0 10px 32px #081d2c08}.report-copy p,.report-detail{color:var(--muted)}.report-label{display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:#087c52;font-weight:800;margin-bottom:12px}.report-preview{position:relative;display:block;padding:18px 18px 46px;width:100%;background:var(--soft);border:1px solid var(--line);border-radius:14px;cursor:zoom-in;margin-top:auto;overflow:hidden}.report-preview img{display:block;width:100%;height:310px;object-fit:contain}.report-preview span{position:absolute;bottom:12px;left:12px;right:12px;font-size:.84rem;font-weight:750;color:var(--navy)}.report-caption{font-size:.78rem;color:var(--muted);margin:10px 0}.report-detail{font-size:.88rem;margin:0}.report-disclaimer{max-width:950px;margin:28px auto 0;text-align:center;color:var(--muted)}.vat-explanation{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px;padding:28px;border-radius:18px;background:var(--mint)}.vat-explanation p{margin-bottom:0;color:#425c69}.local-explanation{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:374px;padding:28px;background:var(--mint);border:1px solid #bbf7d0;border-radius:14px;margin-top:auto;margin-bottom:18px}.local-mark{display:grid;place-items:center;width:76px;height:76px;background:#dcfce7;border:1px solid #86efac;border-radius:22px;font-weight:900;font-size:1.4rem;color:#166534}.local-explanation h4{font-size:1.3rem;line-height:1.4;margin:20px 0 10px}.local-explanation p{font-size:.87rem;color:#365665}.local-condition{border-top:1px solid #bbf7d0;padding-top:16px}.report-actions{justify-content:center;margin-bottom:0}.benefit h3{font-size:1.13rem;letter-spacing:-.015em}.report-dialog{max-width:960px}.report-dialog h2{font-size:1.25rem;margin:0 0 18px}.modal-open{overflow:hidden}.capture-dialog{overscroll-behavior:contain}.nav-links{gap:18px}.nav{gap:18px}.nav-links a{font-size:.86rem}.hero-grid,.demo-grid,.features,.prices{min-width:0}.demo-grid>*,.feature,.price{min-width:0}.demo-panel{overflow-wrap:anywhere}
+    @media(max-width:1100px) and (min-width:921px){.nav-links{gap:10px}.nav-links a{font-size:.78rem}.nav .brand img{width:125px}.nav .button.small{padding:8px 10px}}
+    @media(max-width:640px){.reports-grid,.vat-explanation{grid-template-columns:1fr}.report-card{padding:20px}.report-preview img{height:280px}.vat-explanation{padding:22px}.local-explanation{min-height:300px}.report-dialog{padding:12px}.report-dialog h2{font-size:1.1rem}.calculation-note{padding:20px}}
+.nav-links a.button,.nav-links a.button:hover{color:#fff}    .trial-note{font-size:.9rem;font-weight:700;color:#166534;margin:0 0 14px}
+    .hero-preview{aspect-ratio:16/10}
+    .hero-preview img{width:100%;height:100%;max-height:none;object-fit:cover;object-position:top}
+    .plan-note{font-size:.83rem;color:var(--muted)}
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://lmm-solutions.com/#organisation",
+      "name": "LMM Solutions",
+      "url": "https://lmm-solutions.com/"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://lmm-solutions.com/#site",
+      "name": "Machete",
+      "url": "https://lmm-solutions.com/",
+      "inLanguage": "fr",
+      "publisher": {
+        "@id": "https://lmm-solutions.com/#organisation"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Machete",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Calcul de rentabilité Amazon, simulation de prix, projections fiscales et rapports préparatoires de pré-comptabilité, TVA OSS et TVA locale.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        {
+          "@type": "Offer",
+          "price": "25",
+          "priceCurrency": "EUR"
+        },
+        {
+          "@type": "Offer",
+          "price": "39",
+          "priceCurrency": "EUR"
+        }
+      ],
+      "@id": "https://lmm-solutions.com/#logiciel",
+      "url": "https://lmm-solutions.com/",
+      "inLanguage": "fr",
+      "publisher": {
+        "@id": "https://lmm-solutions.com/#organisation"
+      },
+      "featureList": [
+        "Marge par SKU et résultat global estimé",
+        "Simulation de prix et de volume",
+        "Objectifs et projections fiscales",
+        "Rapport mensuel de rentabilité",
+        "Rapport de pré-comptabilité",
+        "Fiche TVA OSS",
+        "Fiche TVA locale selon activité détectée"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#accueil" aria-label="Machete, accueil"><img src="assets/logo.svg" alt="Machete" width="145" height="40" style="object-fit:contain"></a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="navigation">Menu</button>
+      <nav id="navigation" class="nav-links" aria-label="Navigation principale">
+        <a href="#fonctions">Fonctionnalités</a><a href="#demo">Démonstration</a><a href="#rapports">Rapports</a><a href="#tarifs">Tarifs</a><a href="#faq">FAQ</a><a data-app-link href="https://app.lmm-solutions.com/login">Se connecter</a>
+        <a class="button small" data-app-link href="https://app.lmm-solutions.com/login">Tester gratuitement</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <!-- 1. PREMIER ÉCRAN -->
+    <section id="accueil" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Rentabilité marketplace</span>
+          <h1>Savez-vous vraiment <span>combien vous gagnez</span> sur Amazon&nbsp;?</h1>
+          <p class="lead">Machete transforme vos rapports Amazon en analyses de rentabilité, simulations de prix, projections fiscales et documents préparatoires de TVA.</p>
+          <div class="actions"><a class="button teal" data-app-link href="https://app.lmm-solutions.com/login">Tester gratuitement</a><a class="button secondary" href="#demo">Voir la démonstration</a></div>
+          <p class="trial-note">Test gratuit sur un produit · Sans engagement</p><p class="hero-capabilities">Rentabilité par produit · Simulations de prix · Fiscalité · Rapports PDF · TVA OSS et locale</p><p class="microcopy">Import de fichiers compatibles. Connexion directe Amazon en développement.</p>
+        </div>
+        <div>
+          <div class="product-shot">
+            <button class="capture-button hero-preview" type="button" data-capture="assets/analyses-floute.webp" aria-label="Agrandir la capture réelle des analyses de rentabilité"><img src="assets/analyses-floute.webp" width="1601" height="1604" alt="Analyses réelles de Machete : indicateurs, répartition des ventes et marges par produit" fetchpriority="high"></button>
+          </div><p class="microcopy" style="margin-top:12px;text-align:center">Capture réelle du logiciel · Cliquez pour agrandir</p>
+          <div class="trust-row"><div><b>FBA et FBM</b><span>Deux modèles analysés</span></div><div><b>Calculs détaillés</b><span>Hypothèses visibles</span></div><div><b>Vision par produit</b><span>Pour mieux décider</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. LE PROBLÈME -->
+    <section>
+      <div class="container problem-grid">
+        <div class="problem-copy"><span class="eyebrow">Le vrai résultat</span><h2>Le chiffre d’affaires ne paie pas vos factures.</h2><p>Un produit peut beaucoup se vendre tout en rapportant très peu. Quand les coûts sont dispersés entre plusieurs rapports, la marge apparente peut masquer la réalité.</p></div>
+        <div class="cost-cloud"><div class="cost"><b>Commissions et frais</b><span>FBA, FBM et frais marketplace</span></div><div class="cost"><b>Publicité et retours</b><span>Coûts parfois sous-estimés</span></div><div class="cost"><b>TVA et cotisations</b><span>Un impact direct sur le disponible</span></div><div class="cost"><b>Achat et transport</b><span>La base de la marge réelle</span></div><div class="cost alert"><b>Le résultat à connaître : votre bénéfice net estimé</b><span>Après prise en compte des coûts et hypothèses disponibles.</span></div></div>
+      </div>
+    </section>
+
+    <!-- 3. TROIS FONCTIONS -->
+    <section id="fonctions" class="soft">
+      <div class="container"><div class="section-head"><span class="eyebrow">Trois angles, une vision complète</span><h2>Analysez aujourd’hui. Simulez demain. Préparez la suite.</h2></div>
+        <div class="features">
+          <article id="rentabilite" class="feature"><span class="feature-number">01</span><h3>Rentabilité actuelle Amazon FBA et FBM</h3><p>Repérez les produits rentables, déficitaires ou à marge fragile à partir de vos résultats réalisés.</p><ul><li>Ventes, retours et remboursements</li><li>Commissions et frais Amazon</li><li>Coût d’achat et frais FBM renseignés</li><li>Marge par SKU et coûts manquants</li><li>Résultat global estimé du compte</li></ul><a href="#demo">Voir l’analyse →</a></article>
+          <article id="simulation" class="feature"><span class="feature-number">02</span><h3>Performances futures : simulez vos prix</h3><p>Pourriez-vous gagner davantage avec un prix plus élevé, même en vendant un peu moins ? Comparez les hypothèses avant de décider.</p><ul><li>Prix de vente et évolution du volume</li><li>Coûts et objectifs de vente</li><li>Marge unitaire et scénarios comparés</li><li>Simulations, sans prévision garantie</li></ul><a href="#demo">Voir la simulation →</a></article>
+          <article id="objectifs" class="feature"><span class="feature-number">03</span><h3>Objectifs et fiscalité</h3><p>Comparez plusieurs situations selon les modules et paramètres disponibles.</p><ul><li>Micro-entreprise, EURL ou SARL, SASU ou SAS</li><li>Franchise ou assujettissement à la TVA</li><li>Cotisations et impôts estimés</li><li>Bénéfice disponible pour le dirigeant</li></ul><a href="#confiance">Comprendre les limites →</a></article>
+        </div>
+      </div>
+      <div class="container"><div class="calculation-note"><h3>De la marge produit au bénéfice net estimé</h3><p>La <strong>marge par SKU</strong> décrit le résultat d’un produit avec les coûts qui lui sont attribués. Le <strong>résultat global du compte</strong> intègre aussi les frais généraux, qui ne sont pas toujours répartis par produit. Le <strong>bénéfice net estimé</strong> dépend ensuite des charges, cotisations et hypothèses fiscales renseignées.</p><p>Les résultats reposent sur les fichiers importés et les informations complétées par l’utilisateur. Un coût manquant peut rendre une marge ou un résultat provisoire.</p><details><summary>Quels coûts et mouvements Machete analyse-t-il ?</summary><p>Chiffre d’affaires, remboursements, retours, commissions Amazon, expédition FBA, frais FBM renseignés, stockage, publicité Amazon Ads, abonnement vendeur, transport entrant, autres frais Amazon, coût d’achat et charges d’exploitation. La TVA, les cotisations sociales et la fiscalité sont prises en compte selon les modules et paramètres disponibles.</p></details></div></div>
+    </section>
+
+    <!-- 4. FONCTIONNEMENT -->
+    <section class="dark"><div class="container"><div class="section-head"><span class="eyebrow">Comment ça marche</span><h2>De vos données à une décision claire.</h2></div><div class="steps"><article class="step"><h3>Importez vos données</h3><p>Ajoutez les fichiers issus des rapports compatibles. La connexion directe Amazon est prévue.</p></article><article class="step"><h3>Complétez vos coûts</h3><p>Vérifiez les informations et renseignez les coûts propres à votre activité.</p></article><article class="step"><h3>Analysez et simulez</h3><p>Consultez les résultats par produit, puis comparez vos scénarios.</p></article></div></div></section>
+
+    <!-- 5. DÉMONSTRATION LÉGÈRE : PAS DE VIDÉO CHARGÉE AU DÉMARRAGE -->
+    <section id="demo" class="soft"><div class="container"><div class="section-head"><span class="eyebrow">Démonstration</span><h2>Explorez les écrans de Machete.</h2><p>Découvrez le tableau de bord, le détail des analyses et les projections fiscales. Agrandissez les captures du logiciel ou regardez les vidéos de présentation.</p></div>
+      <div class="demo-grid"><div class="demo-tabs" role="tablist" aria-label="Démonstration des fonctions"><button class="demo-tab" id="tab-analyse" role="tab" aria-selected="true" aria-controls="panel-analyse">Analyser la rentabilité<span>Ventes, coûts et résultat estimé</span></button><button class="demo-tab" id="tab-prix" role="tab" aria-selected="false" aria-controls="panel-prix">Tester un nouveau prix<span>Volume, marge et seuil</span></button><button class="demo-tab" id="tab-objectif" role="tab" aria-selected="false" aria-controls="panel-objectif">Comparer un objectif<span>Structures et disponible estimé</span></button></div>
+        <div><article id="panel-analyse" class="demo-panel" role="tabpanel" aria-labelledby="tab-analyse"><h3>Analyse de la rentabilité</h3><p>Capture réelle de Machete. Seuls les noms des produits sont floutés ; les résultats dépendent des données et paramètres du compte.</p><button class="capture-button" type="button" data-capture="assets/analyses-floute.webp" aria-label="Agrandir : Analyse de la rentabilité"><img src="assets/analyses-floute.webp" width="1601" height="1604" decoding="async" loading="lazy" alt="Capture réelle de l’analyse de rentabilité Machete ; noms des produits floutés"></button><p class="microcopy">Cliquez pour agrandir et lire les détails.</p></article>
+        <article id="panel-prix" class="demo-panel" role="tabpanel" aria-labelledby="tab-prix" hidden><h3>Performances futures et simulation de prix</h3><p>Modifiez le prix et l’hypothèse de volume pour comparer les résultats projetés.</p><button class="capture-button" type="button" data-capture="assets/performance-floute.webp" aria-label="Agrandir la simulation de prix"><img src="assets/performance-floute.webp" width="1601" height="1630" decoding="async" loading="lazy" alt="Capture réelle du simulateur de prix Machete ; noms des produits floutés"></button><p class="microcopy">Capture réelle de Machete, avec les noms des produits floutés. Les résultats dépendent des hypothèses saisies.</p></article>
+        <article id="panel-objectif" class="demo-panel" role="tabpanel" aria-labelledby="tab-objectif" hidden><h3>Objectifs et simulation fiscale</h3><p>Capture réelle de Machete. Seuls les noms des produits sont floutés ; les résultats dépendent des données et paramètres du compte.</p><button class="capture-button" type="button" data-capture="assets/objectifs-floute.webp" aria-label="Agrandir : Objectifs et simulation fiscale"><img src="assets/objectifs-floute.webp" width="1601" height="2044" decoding="async" loading="lazy" alt="Capture réelle des objectifs Machete ; noms des produits floutés"></button><p class="microcopy">Cliquez pour agrandir et lire les détails.</p></article></div>
+      </div>
+<div class="video-gallery"><article class="video-card"><h3>Présentation de Machete</h3><video controls playsinline preload="none" poster="assets/dashboard.webp" aria-label="Présentation de Machete"><source src="assets/presentation.mp4" type="video/mp4">Votre navigateur ne prend pas en charge la vidéo.</video><p><a href="assets/presentation.mp4" target="_blank" rel="noopener">Ouvrir la vidéo directement</a></p><p class="video-error" hidden>La vidéo ne peut pas être chargée. Vérifiez que le dossier assets accompagne le fichier HTML, puis utilisez le lien ci-dessus.</p><details class="video-summary"><summary>Résumé textuel : Présentation générale</summary><p>Machete rassemble les données de vente et les coûts pour lire une rentabilité estimée, puis explorer des scénarios de prix et des objectifs. Les projections dépendent des données importées et des hypothèses renseignées.</p></details></article></div><div class="video-tabs demo-tabs" role="tablist" aria-label="Vidéos spécialisées"><button class="demo-tab" id="video-tab-1" role="tab" aria-selected="true" aria-controls="video-panel-1">Suivi quotidien</button><button class="demo-tab" id="video-tab-2" role="tab" aria-selected="false" aria-controls="video-panel-2">Simulation de prix</button><button class="demo-tab" id="video-tab-3" role="tab" aria-selected="false" aria-controls="video-panel-3">Objectifs et fiscalité</button></div><div id="video-panel-1" role="tabpanel" aria-labelledby="video-tab-1"><article class="video-card"><h3>Suivi quotidien</h3><video controls playsinline preload="none" poster="assets/dashboard.webp" aria-label="Suivi quotidien"><source src="assets/suivi.mp4" type="video/mp4">Votre navigateur ne prend pas en charge la vidéo.</video><p><a href="assets/suivi.mp4" target="_blank" rel="noopener">Ouvrir la vidéo directement</a></p><p class="video-error" hidden>La vidéo ne peut pas être chargée. Vérifiez que le dossier assets accompagne le fichier HTML, puis utilisez le lien ci-dessus.</p><details class="video-summary"><summary>Résumé textuel : Suivi quotidien</summary><p>Consultez les ventes et les frais, complétez vos coûts et examinez le résultat estimé par produit. Un résultat incomplet doit être rapproché des données manquantes avant toute décision.</p></details></article></div><div id="video-panel-2" role="tabpanel" aria-labelledby="video-tab-2" hidden><article class="video-card"><h3>Simulation de prix</h3><video controls playsinline preload="none" poster="assets/performance-floute.webp" aria-label="Simulation de prix"><source src="assets/simulation.mp4" type="video/mp4">Votre navigateur ne prend pas en charge la vidéo.</video><p><a href="assets/simulation.mp4" target="_blank" rel="noopener">Ouvrir la vidéo directement</a></p><p class="video-error" hidden>La vidéo ne peut pas être chargée. Vérifiez que le dossier assets accompagne le fichier HTML, puis utilisez le lien ci-dessus.</p><details class="video-summary"><summary>Résumé textuel : Simulation de prix</summary><p>Comparez un prix de référence et un nouveau prix avec une hypothèse de volume. Les ventes projetées ne constituent pas une prévision garantie.</p></details></article></div><div id="video-panel-3" role="tabpanel" aria-labelledby="video-tab-3" hidden><article class="video-card"><h3>Objectifs et fiscalité</h3><video controls playsinline preload="none" poster="assets/objectifs-floute.webp" aria-label="Objectifs et fiscalité"><source src="assets/objectifs.mp4" type="video/mp4">Votre navigateur ne prend pas en charge la vidéo.</video><p><a href="assets/objectifs.mp4" target="_blank" rel="noopener">Ouvrir la vidéo directement</a></p><p class="video-error" hidden>La vidéo ne peut pas être chargée. Vérifiez que le dossier assets accompagne le fichier HTML, puis utilisez le lien ci-dessus.</p><details class="video-summary"><summary>Résumé textuel : Objectifs et fiscalité</summary><p>Définissez un objectif et comparez des hypothèses d’activité. Les estimations fiscales sont indicatives et doivent être vérifiées avec un professionnel.</p></details></article></div>
+
+    </div></section>
+
+    <section id="rapports"><div class="container"><div class="section-head"><span class="eyebrow">Des données aux documents</span><h2>Des rapports complets, prêts à être exploités</h2><p>Machete transforme vos données Amazon en rapports clairs pour suivre votre rentabilité, préparer votre comptabilité et organiser vos obligations de TVA.</p></div><div class="reports-grid"><article class="report-card"><div class="report-copy"><span class="report-label">PDF · Exemple réel</span><h3>Rapport mensuel de rentabilité</h3><p>Retrouvez vos ventes, remboursements, frais Amazon, coûts, marges, résultats par produit et alertes dans un rapport PDF détaillé.</p></div><button type="button" class="report-preview" data-report="assets/rapport-rentabilite-apercu.webp" aria-label="Agrandir l’aperçu : Rapport mensuel de rentabilité"><img src="assets/rapport-rentabilite-apercu.webp" width="1400" height="1980" loading="lazy" decoding="async" alt="Rapport mensuel de rentabilité — Résumé du mois · page 2 sur 9. Aperçu du document réel sans identifiant d’entreprise."><span>Agrandir l’aperçu ↗</span></button><p class="report-caption">Résumé du mois · page 2 sur 9</p><p class="report-detail">Ventes, unités, remboursements, frais, marge estimée et comparaison avec le mois précédent.</p></article><article class="report-card"><div class="report-copy"><span class="report-label">PDF · Exemple réel</span><h3>Rapport de pré-comptabilité</h3><p>Regroupez les chiffres, frais, cotisations estimées et transactions nécessaires pour préparer les échanges avec votre comptable.</p></div><button type="button" class="report-preview" data-report="assets/rapport-precomptabilite-apercu.webp" aria-label="Agrandir l’aperçu : Rapport de pré-comptabilité"><img src="assets/rapport-precomptabilite-apercu.webp" width="1400" height="1980" loading="lazy" decoding="async" alt="Rapport de pré-comptabilité — Coûts et frais Amazon · page 3 sur 22. Aperçu du document réel sans identifiant d’entreprise."><span>Agrandir l’aperçu ↗</span></button><p class="report-caption">Coûts et frais Amazon · page 3 sur 22</p><p class="report-detail">Un rapport comptable Amazon préparatoire, avec synthèse et détail des transactions ; ce n’est pas une comptabilité officielle validée.</p></article><article class="report-card"><div class="report-copy"><span class="report-label">PDF · Exemple réel</span><h3>Fiche de TVA OSS</h3><p>Préparez votre déclaration trimestrielle OSS grâce à une synthèse des ventes concernées, réparties par pays de destination.</p></div><button type="button" class="report-preview" data-report="assets/rapport-oss-apercu.webp" aria-label="Agrandir l’aperçu : Fiche de TVA OSS"><img src="assets/rapport-oss-apercu.webp" width="1400" height="1980" loading="lazy" decoding="async" alt="Fiche de TVA OSS — Fiche trimestrielle · page 1 sur 1. Aperçu du document réel sans identifiant d’entreprise."><span>Agrandir l’aperçu ↗</span></button><p class="report-caption">Fiche trimestrielle · page 1 sur 1</p><p class="report-detail">Période, pays de destination, chiffre d’affaires HT et TTC, TVA collectée et totaux.</p></article><article class="report-card report-local"><div class="report-copy"><span class="report-label">Selon l’activité détectée</span><h3>Fiche de TVA locale</h3><p>Préparez les informations nécessaires aux déclarations locales pour les pays concernés par votre stockage ou vos opérations locales.</p></div><div class="local-explanation"><span class="local-mark" aria-hidden="true">TVA</span><h4>Un pays configuré.<br>Des opérations locales détectées.</h4><p>Bases HT · Taux applicables · TVA collectée estimée</p><p class="local-condition">Rapport généré lorsqu’une activité locale est détectée dans un pays configuré.</p></div><p class="report-detail">La TVA locale est présentée séparément de l’OSS. Aucun exemple de document local n’est présenté ici.</p></article></div><p class="report-disclaimer">Les rapports Machete sont des documents préparatoires. Les montants doivent être vérifiés avant toute utilisation comptable ou fiscale officielle.</p><div class="vat-explanation"><div><h3>TVA OSS : les pays de destination</h3><p>La fiche trimestrielle regroupe les ventes européennes concernées selon leur pays de destination.</p></div><div><h3>TVA locale : les opérations du pays</h3><p>Les fiches locales concernent notamment les opérations imposables locales et le stockage, selon les pays configurés et les données détectées.</p></div></div><p class="microcopy report-disclaimer">Machete prépare les informations. Il ne transmet pas automatiquement les déclarations aux administrations.</p><div class="actions report-actions"><a class="button teal" data-app-link href="https://app.lmm-solutions.com/login">Découvrir Machete gratuitement</a></div></div></section>
+<section class="soft"><div class="container"><div class="section-head"><span class="eyebrow">Une vision complète</span><h2>Vos marges, votre fiscalité et vos rapports au même endroit</h2><p>Machete ne se contente pas d’afficher vos ventes. Il analyse votre rentabilité, teste vos décisions futures et prépare les rapports nécessaires au suivi de votre activité.</p></div><div class="benefits"><article class="benefit"><h3>Marge réelle par produit</h3><p>Découvrez le résultat de chaque SKU après les remboursements, commissions, frais FBA ou FBM et coût d’achat.</p></article><article class="benefit"><h3>Résultat global estimé</h3><p>Intégrez les frais généraux, la publicité, le transport, les charges et les autres coûts de l’activité.</p></article><article class="benefit"><h3>Simulation de prix</h3><p>Modifiez votre prix et estimez si vous pourriez gagner davantage, même avec une éventuelle diminution des ventes.</p></article><article class="benefit"><h3>Rapports PDF</h3><p>Générez des rapports mensuels de rentabilité et des documents détaillés de pré-comptabilité.</p></article><article class="benefit"><h3>TVA européenne</h3><p>Séparez la TVA OSS des opérations de TVA locale et préparez les montants correspondant à chaque situation.</p></article><article class="benefit"><h3>Projection fiscale</h3><p>Comparez plusieurs statuts et estimez les cotisations, les impôts et le montant réellement disponible.</p></article></div></div></section>
+    <!-- 7. TARIFS CENTRALISÉS DANS LE SCRIPT EN BAS DE PAGE -->
+    <section id="tarifs" class="soft"><div class="container"><div class="section-head"><span class="eyebrow">Tarifs</span><h2>Commencez simplement, évoluez quand vous en avez besoin.</h2></div><p class="pricing-note">Comparez les formules et consultez leurs conditions dans l’application.</p><div class="prices">
+      <article class="price"><h3>Gratuit</h3><p>Pour découvrir la logique de Machete.</p><div class="amount"><span data-price="free">0 €</span></div><ul><li>Test limité à un produit</li><li>Aperçu des calculs principaux</li><li>Sans engagement</li></ul><a class="button secondary" data-app-link href="https://app.lmm-solutions.com/login">Tester gratuitement</a></article>
+      <article class="price"><h3>Starter</h3><p>Pour démarrer sur Amazon France.</p><div class="amount"><span data-price="starter">25 €</span> <small>HT / mois</small></div><ul><li>Jusqu’à 5 SKU</li><li>Jusqu’à 5 coûts de revient</li><li>Marketplace France</li><li>Marge réelle et frais FBA</li><li>Rapports mensuels</li></ul><a class="button secondary" data-app-link href="https://app.lmm-solutions.com/login">Choisir Starter</a></article>
+      <article class="price featured"><span class="popular">Simulation et fiscalité</span><h3>Pro</h3><p>Pour tester vos décisions et préparer vos objectifs.</p><div class="amount"><span data-price="pro">39 €</span> <small>HT / mois</small></div><ul><li>SKU et coûts de revient illimités</li><li>Analyses de rentabilité et comparaisons</li><li>Simulation de prix et hypothèses de volume</li><li>Comparaison de scénarios commerciaux</li><li>Définition d’objectifs de vente</li><li>Projections fiscales selon vos paramètres</li></ul><p class="plan-note">Consultez le détail de la formule dans l’application avant de souscrire.</p><a class="button teal" data-app-link href="https://app.lmm-solutions.com/login">Choisir Pro</a></article>
+    </div><p class="price-disclaimer">Consultez dans l’application les limites et conditions de chaque formule avant de souscrire.</p></div></section>
+
+    <!-- 8. CONFIANCE -->
+    <section id="confiance" class="dark"><div class="container"><div class="section-head"><span class="eyebrow">Transparence</span><h2>Des calculs utiles, avec des hypothèses visibles.</h2></div><div class="confidence"><article><strong>Issu du terrain</strong><p>Machete a été développé à partir d’une expérience réelle de vendeur Amazon et testé pendant plusieurs mois sur des situations concrètes.</p></article><article><strong>Méthode compréhensible</strong><p>Les données et hypothèses utilisées dans les estimations doivent rester consultables et modifiables.</p></article><article><strong>Données protégées</strong><p>Consultez la politique de confidentialité pour les informations relatives au traitement de vos données.</p></article><article><strong>Un outil d’aide à la décision</strong><p>Machete fournit des estimations. Il ne remplace ni un expert-comptable, ni un fiscaliste, ni un conseil juridique.</p></article></div></div></section>
+
+    <!-- DIAGNOSTIC : FONCTION EXISTANTE CONSERVÉE -->
+    <section id="diagnostic" class="diagnostic"><div class="container"><div class="diagnostic-box"><span class="eyebrow">Diagnostic gratuit</span><h2>Êtes-vous vraiment rentable&nbsp;?</h2><p>Recevez le PDF des 10 points critiques de rentabilité pour les vendeurs Amazon FBA français.</p><form id="leadForm" class="diagnostic-form" action="https://3b4344e4.sibforms.com/serve/MUIFAMTCmaIC12k0JbxQ69qWdV4RCMpiYzrBD2LqsYaExuDKthQKI50QKSFOaGnjGgQDXpig1a7o4A9ail0QNDZ5TganWm0AX63ORsP7Yq0ksKy6gqKz3A97RdTmPdTxN9HqyJeA9lD0x3DtH6MGLqUnJQsSsDmax8ALHQ8pVBnx7GfyrmnLsd5W7tQw15lAEemJfUj-eT-zyg2RuA==" method="post"><input type="hidden" name="locale" value="fr"><input type="hidden" name="PRENOM" value="Ami"><input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-10000px"><label for="leadEmail" class="skip">Votre adresse e-mail</label><input type="email" id="leadEmail" name="EMAIL" autocomplete="email" placeholder="votre@email.com" required><button class="button teal" type="submit">Recevoir le PDF</button></form><p class="form-privacy">Après votre demande, suivez les indications du service d’envoi et vérifiez votre boîte e-mail, y compris les courriers indésirables. <a href="https://app.lmm-solutions.com/confidentialite">Confidentialité</a>.</p></div></div></section>
+
+    <!-- 9. FAQ -->
+    <section id="faq"><div class="container"><div class="section-head"><span class="eyebrow">Questions fréquentes</span><h2>Ce qu’il faut savoir avant de commencer.</h2></div><div class="faq">
+      <details><summary>Machete fonctionne-t-il avec Amazon FBA et FBM&nbsp;?</summary><p>Oui, Machete est conçu pour analyser les modèles FBA et FBM, à partir des données disponibles et des coûts renseignés.</p></details>
+      <details><summary>Quelles données faut-il importer&nbsp;?</summary><p>Les rapports nécessaires dépendent du type d’analyse. Machete vous guide pour réunir les ventes, les frais, la publicité, les retours et les autres coûts utiles.</p></details>
+      <details><summary>La connexion API Amazon est-elle disponible&nbsp;?</summary><p>La connexion directe à Amazon Selling Partner API est en développement. Aujourd’hui, certaines analyses reposent sur l’importation de fichiers compatibles.</p></details>
+      <details><summary>Machete remplace-t-il un comptable&nbsp;?</summary><p>Non. Machete est un outil de simulation et d’aide à la décision. Les situations fiscales, comptables ou juridiques doivent être vérifiées par un professionnel compétent.</p></details>
+      <details><summary>Mes données sont-elles protégées&nbsp;?</summary><p>Consultez notre <a href="https://app.lmm-solutions.com/confidentialite">politique de confidentialité</a> et contactez-nous pour toute question concernant vos données.</p></details>
+      <details><summary>Puis-je annuler mon abonnement&nbsp;?</summary><p>Les modalités de résiliation sont indiquées dans les conditions de votre abonnement et les <a href="https://app.lmm-solutions.com/cgv">conditions générales de vente</a>.</p></details>
+      <details><summary>Le logiciel fonctionne-t-il dans plusieurs pays&nbsp;?</summary><p>Machete distingue les ventes OSS et les opérations locales selon les pays configurés et les données disponibles. La couverture des règles étrangères est vérifiée et enrichie progressivement.</p></details>
+      <details><summary>Quelles marketplaces sont disponibles&nbsp;?</summary><p>Amazon est la marketplace prioritaire. Cdiscount, Fnac, Rakuten, Kaufland, eBay, ManoMano et d’autres plateformes sont envisagées, mais ne sont pas présentées comme déjà connectées.</p></details>
+      <details><summary>Comment fonctionne la période gratuite&nbsp;?</summary><p>La formule gratuite permet de découvrir le service dans les limites précisées lors de l’inscription.</p></details>
+      <details><summary>Puis-je tester avant de payer&nbsp;?</summary><p>Oui, la formule gratuite prévue permet notamment de tester l’analyse sur un produit, dans les limites indiquées lors de l’inscription.</p></details>
+<details><summary>Quels rapports Machete peut-il générer ?</summary><p>Machete peut produire un rapport mensuel de rentabilité, un rapport de pré-comptabilité, une fiche trimestrielle de TVA OSS et, lorsque les opérations le permettent, une fiche de TVA locale par pays concerné.</p></details><details><summary>Quelle est la différence entre TVA OSS et TVA locale ?</summary><p>La fiche OSS regroupe les ventes européennes concernées selon le pays de destination. La TVA locale concerne notamment les opérations réalisées localement ou liées à un stockage dans un pays. Les deux calculs sont présentés séparément.</p></details><details><summary>Machete effectue-t-il mes déclarations de TVA ?</summary><p>Machete prépare les montants et rapports nécessaires au contrôle et à la préparation des déclarations. Il ne transmet pas automatiquement une déclaration officielle à l’administration.</p></details><details><summary>Pourquoi aucune fiche de TVA locale n’apparaît-elle parfois ?</summary><p>Une fiche locale est générée uniquement lorsqu’une opération locale correspondant aux pays configurés est détectée sur la période.</p></details>    </div></div></section>
+
+    <!-- 10. APPEL FINAL -->
+    <section class="final"><div class="container"><h2>Découvrez ce que votre activité vous rapporte réellement.</h2><p>Commencez par un produit. Obtenez une vision plus claire de votre rentabilité.</p><a class="button" data-app-link href="https://app.lmm-solutions.com/login">Tester Machete gratuitement</a></div></section>
+  </main>
+
+  <footer><div class="container"><div class="footer-grid"><div><div class="footer-title">Machete par LMM Solutions</div><p>Le copilote de rentabilité, de simulation et de pilotage fiscal des vendeurs marketplace.</p><a href="mailto:lmmsolutions.fr@gmail.com">lmmsolutions.fr@gmail.com</a></div><div class="footer-links"><b>Produit</b><a href="#fonctions">Fonctionnalités</a><a href="#demo">Démonstration</a><a href="#rapports">Rapports</a><a href="#tarifs">Tarifs</a><a href="#faq">FAQ</a><a href="https://blog.lmm-solutions.com">Blog Machete</a></div><div class="footer-links"><b>Informations</b><a href="https://app.lmm-solutions.com/mentions-legales">Mentions légales</a><a href="https://app.lmm-solutions.com/cgv">Conditions générales</a><a href="https://app.lmm-solutions.com/confidentialite">Confidentialité</a><button class="link-button" id="openCookies" type="button">Gérer les cookies</button></div></div><div class="footer-bottom">© <span id="year"></span> LMM Solutions. Les simulations sont indicatives et ne constituent pas un conseil comptable, fiscal ou juridique.</div></div></footer>
+
+  <aside class="cookie-panel" id="cookiePanel" aria-label="Choix des cookies"><strong>Mesure d’audience</strong><p>Avec votre accord, Google Analytics nous aide à comprendre l’utilisation du site. Aucun outil de mesure n’est chargé avant votre choix. <a href="https://app.lmm-solutions.com/confidentialite">En savoir plus</a>.</p><div class="cookie-actions"><button class="button teal" id="acceptCookies" type="button">Accepter</button><button class="button secondary" id="refuseCookies" type="button">Refuser</button></div></aside>
+
+  <dialog id="reportDialog" class="capture-dialog report-dialog" aria-labelledby="reportDialogTitle"><form method="dialog"><button type="submit" autofocus>Fermer l’aperçu</button></form><h2 id="reportDialogTitle">Aperçu d’un rapport Machete</h2><img id="reportImage" alt=""></dialog>
+  <dialog id="captureDialog" class="capture-dialog" aria-label="Capture Machete agrandie"><form method="dialog"><button>Fermer</button></form><img id="captureImage" alt=""></dialog>
+  <script>
+    function wireImageDialog(selector,dialogId,imageId,key){
+      const dialog=document.getElementById(dialogId),image=document.getElementById(imageId);let opener=null;
+      document.querySelectorAll(selector).forEach(button=>button.addEventListener('click',()=>{
+        opener=button;const source=button.querySelector('img');image.src=button.dataset[key];image.alt=source.alt;
+        image.width=source.naturalWidth||source.width;image.height=source.naturalHeight||source.height;
+        dialog.showModal();document.documentElement.classList.add('modal-open');dialog.scrollTop=0;
+      }));
+      dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});
+      dialog.addEventListener('close',()=>{document.documentElement.classList.remove('modal-open');opener?.focus({preventScroll:true});});
+    }
+    wireImageDialog('[data-capture]','captureDialog','captureImage','capture');
+    wireImageDialog('[data-report]','reportDialog','reportImage','report');
+    /* Réglages commerciaux centralisés : modifier ici plutôt que dans toute la page. */
+    const SITE_CONFIG = {
+      appUrl: "https://app.lmm-solutions.com/login",
+      prices: { free: "0 €", starter: "25 €", pro: "39 €" }
+    };
+    document.querySelectorAll("[data-app-link]").forEach(link => link.href = SITE_CONFIG.appUrl);
+    Object.entries(SITE_CONFIG.prices).forEach(([key,value]) => document.querySelectorAll(`[data-price="${key}"]`).forEach(el => el.textContent = value));
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    /* Lecteurs natifs : commandes accessibles, sans lecture automatique. */
+    document.querySelectorAll('.video-card video').forEach(video=>{
+      const showError=()=>{video.closest('.video-card').querySelector('.video-error').hidden=false;};
+      video.addEventListener('error',showError);
+      video.querySelector('source').addEventListener('error',showError);
+      video.addEventListener('play',()=>document.querySelectorAll('.video-card video').forEach(other=>{if(other!==video)other.pause();}));
+    });
+
+    document.addEventListener('visibilitychange',()=>{if(document.hidden)document.querySelectorAll('video').forEach(video=>video.pause());});
+
+    /* Google Analytics est chargé uniquement après consentement. */
+    const cookiePanel = document.getElementById("cookiePanel");
+    function loadAnalytics(){window["ga-disable-G-QPB0J927TK"]=false;if(window.gtag)return;window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag("js",new Date());gtag("config","G-QPB0J927TK",{anonymize_ip:true});const script=document.createElement("script");script.async=true;script.src="https://www.googletagmanager.com/gtag/js?id=G-QPB0J927TK";document.head.appendChild(script);}
+    function setCookieChoice(choice){try{localStorage.setItem("machete_cookie_choice",choice);}catch(e){}cookiePanel.classList.remove("open");if(choice==="accepted")loadAnalytics();else{window["ga-disable-G-QPB0J927TK"]=true;document.cookie.split(";").forEach(cookie=>{const name=cookie.split("=")[0].trim();if(name.startsWith("_ga")){["",location.hostname,"."+location.hostname,".lmm-solutions.com"].forEach(domain=>{document.cookie=name+"=; Max-Age=0; path=/"+(domain?"; domain="+domain:"");});}});}}
+    let cookieChoice=null;try{cookieChoice=localStorage.getItem("machete_cookie_choice");}catch(e){}if(cookieChoice==="accepted")loadAnalytics();else if(!cookieChoice)cookiePanel.classList.add("open");
+    document.getElementById("acceptCookies").addEventListener("click",()=>setCookieChoice("accepted"));
+    document.getElementById("refuseCookies").addEventListener("click",()=>setCookieChoice("refused"));
+    document.getElementById("openCookies").addEventListener("click",()=>cookiePanel.classList.add("open"));
+
+    const menuButton = document.querySelector(".menu-button");
+    const navigation = document.querySelector(".nav-links");
+    menuButton.addEventListener("click", () => { const open = navigation.classList.toggle("open"); menuButton.setAttribute("aria-expanded", String(open)); });
+    navigation.querySelectorAll("a").forEach(link => link.addEventListener("click", () => { navigation.classList.remove("open"); menuButton.setAttribute("aria-expanded", "false"); }));
+
+    document.querySelectorAll('[role="tablist"]').forEach(list=>{
+      const tabs=[...list.querySelectorAll('[role="tab"]')];
+      const activate=active=>tabs.forEach(tab=>{
+        const selected=tab===active, panel=document.getElementById(tab.getAttribute('aria-controls'));
+        tab.setAttribute('aria-selected',String(selected));tab.tabIndex=selected?0:-1;panel.hidden=!selected;
+        if(!selected)panel.querySelectorAll('video').forEach(video=>video.pause());
+      });
+      tabs.forEach((tab,index)=>{
+        tab.tabIndex=tab.getAttribute('aria-selected')==='true'?0:-1;
+        tab.addEventListener('click',()=>activate(tab));
+        tab.addEventListener('keydown',event=>{
+          if(!['ArrowDown','ArrowUp','ArrowRight','ArrowLeft','Home','End'].includes(event.key))return;
+          event.preventDefault();const direction=['ArrowDown','ArrowRight'].includes(event.key)?1:-1;
+          const next=event.key==='Home'?tabs[0]:event.key==='End'?tabs[tabs.length-1]:tabs[(index+direction+tabs.length)%tabs.length];
+          activate(next);next.focus();
+        });
+      });
+    });
+    const closeMenu=()=>{navigation.classList.remove('open');menuButton.setAttribute('aria-expanded','false');};
+    document.addEventListener('keydown',event=>{if(event.key==='Escape'&&navigation.classList.contains('open')){closeMenu();menuButton.focus();}});
+    document.addEventListener('click',event=>{if(!navigation.contains(event.target)&&!menuButton.contains(event.target))closeMenu();});
+    window.matchMedia('(min-width:921px)').addEventListener('change',event=>{if(event.matches)closeMenu();});
+
+    /* Réponse du formulaire affichée directement par Brevo après soumission native. */
+  </script>
+</body>
+</html>
